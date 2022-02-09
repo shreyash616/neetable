@@ -15,7 +15,7 @@ const Header = () => {
                     <span className="nav-link"><Link className="text-decoration-none" to='/students'>Students</Link></span>
                 </li>
                 <li className="nav-item active">
-                    <span className="nav-link"><Link className="text-decoration-none" to='/clients'>Client</Link></span>
+                    <span className="nav-link"><Link className="text-decoration-none" to='/clients'>Clients</Link></span>
                 </li>
             </ul>
         </div>

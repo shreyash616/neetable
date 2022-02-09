@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import StudentsData from './data.json'
+import { connect } from 'react-redux'
+import { sendAllStudentsData } from '../../redux'
 
 const StudentConstants = {
     tableHeadings: ['Roll No.', 'Name', 'Class', 'Actions'],
@@ -19,22 +20,26 @@ export const debounce = (func, delay) => {
         clearTimeout(timeout)
         timeout = setTimeout(later, delay)
     }
-
 }
 
-const Students = () => {
+const mapStateToProps = store => ({
+    allStudents: store.studentsData
+})
 
-    const [students, setStudents] = useState(StudentsData.students)
-    const [allStudents, setAllStudents] = useState(StudentsData.students)
+const Students = ({ allStudents, dispatch }) => {
+
+    const setAllStudents = (data) => dispatch(sendAllStudentsData(data))
+
+    const [students, setStudents] = useState([])
     const [searchValue, setSearchValue] = useState('')
     const [toEditColumn, setToEditColumn] = useState({})
     const [addStudentData, setAddStudentData] = useState({})
     const [showAddStudentModal, setShowAddStudentModal] = useState(false)
 
     const filterStudents = useCallback(debounce((value) => {
-        const studentName = value.trim()
+        const studentName = value.trim().toLowerCase()
         if (studentName) {
-            setStudents(allStudents.filter(student => student.name.includes(studentName)))
+            setStudents(allStudents.filter(student => student.name.toLowerCase().includes(studentName)))
         } else {
             setStudents(allStudents)
         }
@@ -73,8 +78,6 @@ const Students = () => {
         setAllStudents([...allStudents, { ...addStudentData, id: allStudents[allStudents.length - 1].id + 1 }])
         triggerModal()
     }
-
-    console.log(allStudents)
 
     const AddStudentModal = () => <div className="modal" style={{ display: 'initial', background: '#9d9d9d75' }} tabindex="-1" role="dialog">
         <div className="modal-dialog" role="document">
@@ -116,20 +119,20 @@ const Students = () => {
         </div>
     </div>
 
-    const SearchAndAddStudent = <div className='row'>
-        <div className='form-group ps-0 pe-5 col-10'>
+    const SearchAndAddStudent = <div className='d-flex justify-content-between'>
+        <div className='form-group w-100 me-2 ms-3'>
             <input
-                className='form-control h-100 border-0 bg-light'
+                className='form-control h-100 bg-light border'
                 placeholder={StudentConstants.SEARCH_PLACEHOLDER}
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
             />
         </div>
-        <button className='col-2 btn btn-primary' onClick={triggerModal}>{'Add student'}</button>
+        <button className='w-25 me-3 ms-2 btn btn-primary' onClick={triggerModal}>{'Add student'}</button>
     </div>
 
     const StudentTable = <div className='table-responsive'>
-        <table className='table rounded mt-3 table-sm table-nowrap card-table'>
+        <table style={{ maxHeight: '90vh' }} className='table rounded mt-3 table-sm table-nowrap card-table'>
             <thead>
                 <tr>{StudentConstants.tableHeadings.map(heading => <th className='text-muted p-2 text-center border-0'>{heading}</th>)}</tr>
             </thead>
@@ -160,7 +163,7 @@ const Students = () => {
         </table>
     </div>
 
-    return <div className='container ps-0 pe-0 mt-5 w-50 rounded'>
+    return <div className='container p-5 bg-light ps-0 pe-0 mt-5 w-50 rounded'>
         {SearchAndAddStudent}
         {StudentTable}
         {showAddStudentModal && AddStudentModal()}
@@ -168,4 +171,4 @@ const Students = () => {
 
 }
 
-export default Students
+export default connect(mapStateToProps)(Students)

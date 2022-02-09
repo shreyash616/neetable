@@ -1,0 +1,59 @@
+{
+  "clients": [
+    {
+      "country": "Portugal",
+      "clients": [
+        {
+          "name": "Aasiya Jayavant",
+          "id": 1
+        },
+        {
+          "name": "Luvleen Lawrence",
+          "id": 2
+        },
+        {
+          "name": "Ray Mibourne",
+          "id": 3
+        },
+        {
+          "name": "Cayla Brister",
+          "id": 4
+        }
+      ]
+    },
+    {
+      "country": "Nicaragua",
+      "clients": [
+        {
+          "name": "Deveedaas Nandi",
+          "id": 5
+        },
+        {
+          "name": "Obasey Chidy",
+          "id": 6
+        },
+        {
+          "name": "Xenie Dolezelova",
+          "id": 7
+        },
+        {
+          "name": "Ezequiel Dengra",
+          "id": 8
+        }
+      ]
+    },
+    {
+      "country": "Marshall Islands",
+      "clients": [
+        {
+          "name": "Aaron Almarez",
+          "id": 9
+        },
+        {
+          "name": "Jelena Denisova",
+          "id": 10
+        }
+      ]
+    }
+  ]
+}
