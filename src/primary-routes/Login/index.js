@@ -57,7 +57,7 @@ const Login = () => {
                     </button>
                 </form>
             </div>
-            <img className='col-8 vh-100' src='https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?cs=srgb&dl=pexels-jiarong-deng-1034662.jpg&fm=jpg' />
+            <img alt='Login background' className='col-8 vh-100' src='https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?cs=srgb&dl=pexels-jiarong-deng-1034662.jpg&fm=jpg' />
         </div>
     </div>
 }

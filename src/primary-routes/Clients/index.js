@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import Checkbox from '../../common-components/Checkbox'
 import { sendAllClientsData } from '../../redux'
@@ -80,12 +80,10 @@ const Clients = ({
             return <div>
                 {AllClientsData.clients.map(countryData => {
                     const countryInSavedData = clientsData.find(clientData => clientData.country === countryData.country)
-                    if (countryInSavedData) {
-                        return <div className='mb-3'>
-                            <h1 className='font-weight-bold mb-2'>{countryInSavedData.country}</h1>
-                            {countryInSavedData.clients.map(clientData => getNameCard(clientData, countryData.country))}
-                        </div>
-                    }
+                    return !!countryInSavedData && <div className='mb-3'>
+                        <h1 className='font-weight-bold mb-2'>{countryInSavedData.country}</h1>
+                        {countryInSavedData.clients.map(clientData => getNameCard(clientData, countryData.country))}
+                    </div>
                 })}
             </div>
         }
