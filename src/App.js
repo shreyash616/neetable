@@ -19,7 +19,6 @@ const App = () => {
       <Route path='/gallery/:category' element={<Gallery />} />
       <Route path='/students' element={<Students />} />
       <Route path='/clients' element={<Clients />} />
-      <Route path='/' element={<Navigate replace to="/login" />} />
       <Route path='*' element={<Navigate replace to="/login" />} />
     </Routes>
   </div>
