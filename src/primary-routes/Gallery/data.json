@@ -1,0 +1,29 @@
+{
+  "forest": {
+    "background": "//live.staticflickr.com/7332/16239523187_33389ea03d_m.jpg",
+    "images": [
+      "//live.staticflickr.com/65535/51812498236_173958a08d_b.jpg",
+      "//live.staticflickr.com/432/31691354722_338e0457d9_h.jpg",
+      "//live.staticflickr.com/5541/30702057932_b21e288be0_h.jpg"
+    ],
+    "label": "Forest"
+  },
+  "landscape": {
+    "background": "//live.staticflickr.com/7443/10886301316_85ba9a7802_m.jpg",
+    "images": [
+      "//live.staticflickr.com/65535/51858838283_f7c538ff92_h.jpg",
+      "//live.staticflickr.com/7919/32026346867_17ff2bf633_k.jpg",
+      "//live.staticflickr.com/4649/25099382997_6f465edb3c_h.jpg"
+    ],
+    "label": "Landscape"
+  },
+  "sunset": {
+    "background": "//live.staticflickr.com/7450/26815515145_868c00e4ed_m.jpg",
+    "images": [
+      "//live.staticflickr.com/65535/51842193774_aecf510080_n.jpg",
+      "//live.staticflickr.com/5717/22982797634_cd39d38e77_k.jpg",
+      "//live.staticflickr.com/4784/40700545681_da9183d9f7_h.jpg"
+    ],
+    "label": "Sunset"
+  }
+}
