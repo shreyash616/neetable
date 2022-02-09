@@ -11,7 +11,7 @@ const App = () => {
 
   const { pathname } = useLocation()
 
-  return <div className='h-100' style={{ backgroundImage: `url("https://images.saymedia-content.com/.image/t_share/MTc4NzM1OTc4MzE0MzQzOTM1/how-to-create-cool-website-backgrounds-the-ultimate-guide.png")`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+  return <div className='h-100' style={{ backgroundImage: pathname !== '/login' && `url("https://images.saymedia-content.com/.image/t_share/MTc4NzM1OTc4MzE0MzQzOTM1/how-to-create-cool-website-backgrounds-the-ultimate-guide.png")`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
     {pathname !== '/login' && <Header />}
     <Routes>
       <Route path='/login' element={<Login />} />

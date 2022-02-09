@@ -26,7 +26,7 @@ const Login = () => {
 
     return <div>
         <div className='row justify-content-center'>
-            <div className='col-4 pl-3 pr-3 align-self-center'>
+            <div className='col-4 ps-4 pe-2 align-self-center'>
                 <h1 className='font-weight-bold text-center mb-3'>{LoginConstants.SIGN_IN}</h1>
                 <form onSubmit={handleSignIn}>
                     <div className='form-group mb-3'>
